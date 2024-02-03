@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    margin: 0; 
+    /* for removes default margin */
+    padding: 0;
+    /* removes default paddings */
+    box-sizing: border-box;
+    /* ensures that padding and border are included in the element's total width and height. */
+    font-family: 'poppins' ,sans-serif;
+    /* sets the default font  */
+}
+
+body{
+    color:#284b63;
+}
+.header{
+    position: fixed;
+    /* header will be fixed at the top of the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    /* top and bottom, left and right padding */
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+}
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default; 
+    opacity: 0;
+    animation: slideright 1s ease forwards; 
+}
+
+.navbar a{
+    display: inline-block;
+    font-size: 15px;
+    font: bolder;
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slidetop .5s ease forwards ;
+
+}
+.navbar a:hover{
+    color:#343a40;
+
+}
+.home{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    /* background: url("https://wallpapercave.com/wp/wp2552372.jpg") no-repeat; */
+    /* background-size: cover; */
+    /* background-position: center; */
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content{
+    max-width: 600px;
+}
+.home-content h3{
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slidebottom 1s ease forwards ;
+    animation-delay: .7s;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideleft 1s ease forwards ;
+    animation-delay: 1s;
+
+
+}
+.home-content h3:nth-of-type(2){
+    margin-bottom: 30px;
+}
+.home-content h3 span{
+    color: #0ef;
+}
+.home-content p{
+    font-size: 20px;
+    opacity: 0;
+    animation: slideleft 1s ease forwards ;
+    animation-delay: 1s;
+
+}
+.home-sci a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+}
+
+.home-sci a:hover{
+    background: #0ef;
+    color: blue;
+    /* the color of the inside the outer circle */
+    box-shadow: 0 0 20px #0ef;
+}
+.btn-box{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+    color: blue;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+.btn-box:hover{
+    box-shadow: 0 0 5px #0ef ;
+}
+
+@keyframes slideright{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideleft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slidetop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slidebottom{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* new navbar1 start */
+nav{
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 998;
+  transition: all 0.3s ease;
+    font-family: 'poppins',sans-serif;
+}
+nav .navbar1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    text-align: none;
+    background: bisque;
+}
+nav .navbar1 .logo1 a{
+    font-size: 40px;
+    font-weight: 500;
+    color: #0ef;
+}
+nav .navbar1 .menu{
+    display: flex;
+    position: relative;
+}
+nav .navbar1 .menu li{
+    margin: 0 8px;
+    list-style: none;
+}
+.navbar1 .menu li{
+    font-size: 18px;
+    font-size: 500;
+    color: #284b63;
+}
+
+/* side navigation menu  */
+nav .menu-btn,
+.navbar1 .cancel-btn{
+    position: absolute;
+    color:#fff;
+    font-size: 20px;
+    right: 30px;
+    top: 20px;
+}
+nav .menu-btn{
+    color: #4070f4;
+}
+
+
+/* responsive media query */
+@media (max-width:700px){
+    nav .navbar1 .menu{
+        position: absolute;
+         /* left: -100%;  */
+        left: 100%;
+        top: 0;
+        height: 100vh;
+        max-width: 400px;
+        width:100% ;
+        background: #284b63;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        transition: all 0.5 ease;
+    }
+    nav .navbar1.active .menu{
+        left:0;
+    }
+    
+    .navbar1 .menu li a{
+        display: block;
+        margin: 10px 0;
+        font-size: 23px;
+        color: #343a40;
+    }
+}
+
+
+/* about me section */
+
+.about .content{
+    width: 80%;
+    margin:40px auto ;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.about .title span{
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    position: relative;
+}
+.about .title span::before,
+.about .title span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color:#343a40 ;
+
+}
+.about .title span::after{
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -7px;
+}
+
+.about .about-details{
+    display: flex;
+    justify-content: space-between;
+}
+.about .about-details .right{
+    width: 45%;
+}
+.about .about-details .right img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.about .about-details .left{
+    width:60%;
+}
+.about-details .left p{
+    color:blue;
+    text-align: justify;
+
+}
+.button{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+    color: blue;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+.button:hover{
+    box-shadow: 0 0 5px #0ef ;
+}
